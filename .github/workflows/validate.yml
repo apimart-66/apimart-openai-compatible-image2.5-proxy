@@ -6,12 +6,16 @@ on:
   pull_request:
 
 jobs:
-  links-and-data:
+  guard:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Attribution and prompt data check
-        run: python3 tools/check_links.py
+      - name: Attribution and pricing data check
+        run: python tools/check_links.py
+      - name: Smoke-test the migration checker
+        run: |
+          python openai_migration_check.py .
+          python -m unittest discover -s tests -v

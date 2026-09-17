@@ -1,6 +1,6 @@
-__pycache__/
-*.pyc
-out/
 .env
 .venv/
+__pycache__/
+*.pyc
 node_modules/
+.DS_Store

@@ -1,16 +1,18 @@
 # Contributing
 
-Useful contributions to this repository:
+Useful contributions:
 
-1. A prompt recipe that reliably produces a usable asset (prompt + output + `version` + aspect ratio).
-2. A correction to the pricing or limit notes, with the source page and the date you checked it.
-3. A client example in another language that keeps the same submit → poll → download lifecycle.
+1. A compatibility check for a migration surface this kit does not cover yet (audio, embeddings, batch, moderation).
+2. A client example in another language that keeps the same environment-variable contract.
+3. A rollback or canary pattern with the failure mode it prevents.
 
 Before opening a pull request:
 
 ```bash
-python3 tools/check_links.py          # attribution links and prompt data
+python -m unittest discover -s tests -v
+python openai_migration_check.py .
+python tools/check_links.py
 ```
 
-Rules: keep every APIMart link attributed through its `go.apimart.ai` short link, never commit API keys, and do not
-paste outputs that contain third-party trademarks you have no right to publish.
+Rules: never commit credentials, keep every APIMart link attributed through its `go.apimart.ai` short link, and do not
+claim full compatibility for a surface you have not actually exercised.

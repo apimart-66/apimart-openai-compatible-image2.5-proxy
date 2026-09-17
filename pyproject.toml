@@ -1,0 +1,9 @@
+[project]
+name = "openai-compatible-api-migration-kit"
+version = "0.1.0"
+description = "Local migration checks and examples for OpenAI-compatible API gateways"
+requires-python = ">=3.10"
+license = "MIT"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

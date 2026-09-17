@@ -1,0 +1,10 @@
+{
+  "name": "openai-compatible-api-migration-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Runnable OpenAI-compatible API migration examples",
+  "dependencies": {
+    "openai": "^6.0.0"
+  }
+}
